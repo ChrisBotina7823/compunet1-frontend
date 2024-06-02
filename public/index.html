@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cottontoil</title>
+    <link rel="stylesheet" href="styles/index_styles.css">
+    <link rel="stylesheet" href="styles/add_product_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Cottontoil!</h1>
+        <nav>
+            <a id="homeRoute" href="#home">Inicio</a>
+            <a id="productsRoute" href="#products">Productos</a>
+            <a id="addProductRoute" href="#add-product">Agregar producto</a>
+            <a id="editProductRoute" href="#edit-product">Editar Producto</a>
+            <a id="cartRoute" href="#cart">
+                <i class="fas fa-shopping-cart"></i> 
+            </a>
+            <a id="paymentHistoryRoute" href="#payment-history">Historial de Compras</a>
+            <!-- <a href="#contact">Contact</a> -->
+            <a id="loginRoute" href="login.html">Iniciar sesión</a>
+            <a id="logoutRoute" href="#">Cerrar sesión</a>
+
+             <a href="#" class="social-link"> <i class="fa-brands fa-youtube"> </i></a> 
+             <a href="#" class="social-link"> <i class="fa-brands fa-github"> </i></a> 
+            <a href="#" class="social-link"> <i class="fa-brands fa-instagram"> </i></a> 
+        </nav>
+    </header>
+
+    <main>
+        <div id="root" style="min-height:30vh"></div>
+    </main>
+
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img class="logo" src="https://i.pinimg.com/564x/68/23/44/68234471dc585f861d1bb5948e907536.jpg" alt="Logo de Example">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta veniam deleniti, sunt repellendus enim officia, rem obcaecati, architecto voluptas et tempore libero perferendis eius iusto. Itaque necessitatibus cupiditate odio molestias.</p>
+            </div>
+            <div class="box">
+                <h2>SÍGUENOS</h2>
+                <div class="red-social-footer">
+                    <a href="#" class="fa-brands fa-youtube"></a>
+                    <a href="#" class="fa-brands fa-facebook"></a>
+                    <a href="#" class="fa-brands fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b class="pie-pagina-gradiente">Cottontoil</b> Todos los derechos reservados.</small>
+        </div>
+    </footer>
+    <script type="module" src="src/index.js"></script>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem('user'));
+        const loginRoute = document.getElementById('loginRoute');
+        const logoutRoute = document.getElementById('logoutRoute');
+        const cartRoute = document.getElementById('cartRoute');
+        const addProductRoute = document.getElementById('addProductRoute');
+        const paymentHistoryRoute = document.getElementById('paymentHistoryRoute');
+        const editProductRoute = document.getElementById('editProductRoute');
+        logoutRoute.addEventListener('click', () => {
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        });
+        if(user) {
+            loginRoute.style.display = 'none';
+            if(user.username == "admin") {
+                cartRoute.style.display = 'none';
+                paymentHistoryRoute.style.display = 'none';
+            } else {
+                addProductRoute.style.display = 'none';
+                editProductRoute.style.display = 'none';
+            }
+        } else {
+            logoutRoute.style.display = 'none';
+            addProductRoute.style.display = 'none';
+            cartRoute.style.display = 'none';
+            paymentHistoryRoute.style.display = 'none';
+            editProductRoute.style.display = 'none';    
+        }
+    </script>
+</body>
+</html>
