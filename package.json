@@ -1,10 +1,11 @@
 {
   "type": "module",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "webpack": "^5.91.0"
   },
-  "scripts":{
+  "scripts": {
     "start": "node server.js",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
