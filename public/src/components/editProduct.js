@@ -39,13 +39,19 @@ function Product(product) {
 
     container.appendChild(info);
 
-    const button = document.createElement('button');
-    button.textContent = 'Editar stock';
+    // Crear campo de entrada para editar el stock
     const input_stock = document.createElement("input");
     input_stock.setAttribute("type", "number");
     input_stock.setAttribute("id", "input_stock" + product.id);
-    button.onclick = () => editProduct(JSON.stringify({id: product.id, stock: document.querySelector("#input_stock" + product.id).value}));
+    input_stock.setAttribute("placeholder", "Type stock");
+    input_stock.classList.add('stock-input'); // Agregar clase para estilos
     info.appendChild(input_stock);
+
+    // Crear botón de edición de stock
+    const button = document.createElement('button');
+    button.textContent = 'Edit Stock';
+    button.classList.add('edit-stock-btn'); // Agregar clase para estilos
+    button.onclick = () => editProduct(JSON.stringify({id: product.id, stock: document.querySelector("#input_stock" + product.id).value}));
     info.appendChild(button);
 
     return container;

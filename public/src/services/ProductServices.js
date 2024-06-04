@@ -1,6 +1,6 @@
 async function getProducts() {
     try {
-        const response = await fetch('https://compunet1-backend-production.up.railway.app/products/');
+        const response = await fetch('http://localhost:3000/products/');
         const responseJson = await response.json();
         const products = responseJson.products;
         return products;
@@ -11,7 +11,7 @@ async function getProducts() {
 
 function addProduct(productData) {
     async function addProductAsync(productData) {
-        const request = new Request('https://compunet1-backend-production.up.railway.app/products', {
+        const request = new Request('http://localhost:3000/products', {
             method: 'POST',
             body: productData, 
         });
@@ -29,7 +29,7 @@ function addProduct(productData) {
 function editProduct(data) {
 
     async function editProductAsync(data) {
-        const request = new Request('https://compunet1-backend-production.up.railway.app/products/edit', {
+        const request = new Request('http://localhost:3000/products/edit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

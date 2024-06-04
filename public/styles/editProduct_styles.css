@@ -1,0 +1,23 @@
+.stock-input {
+    margin-left: 5px;
+    text-align: center;
+    width: 100px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-stock-btn {
+    margin-top: 2px;
+    padding: 8px 16px;
+    background-color: #706969;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-stock-btn:hover {
+    background-color: #595656;
+}

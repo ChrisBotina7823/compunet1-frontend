@@ -1,5 +1,3 @@
-import { addProduct } from "../services/ProductServices.js";
-
 async function AddProductView() {
     // Crear el contenedor del formulario
     let formContainer = document.createElement('div');
@@ -7,7 +5,7 @@ async function AddProductView() {
     
     const form = document.createElement('form');
     form.method = 'POST';
-    form.action = 'https://compunet1-backend-production.up.railway.app/products';
+    form.action = 'http://localhost:3000/products';
     form.enctype = 'multipart/form-data';
     
     // Crear el título del formulario
@@ -65,6 +63,7 @@ async function AddProductView() {
     const thumbnailInput = document.createElement('input');
     thumbnailInput.type = 'file';
     thumbnailInput.name = 'thumbnail';
+    thumbnailInput.id = 'fileInput'; // Agregar id al input de archivo
     thumbnailInput.style.display = 'none'; // Ocultar el input de archivo por defecto
 
     // Crear el botón personalizado para seleccionar archivo
@@ -72,6 +71,7 @@ async function AddProductView() {
     customFileUpload.textContent = 'Seleccionar archivo';
     customFileUpload.classList.add('custom-file-upload');
     customFileUpload.setAttribute('for', 'fileInput');
+    customFileUpload.id = 'customFileLabel'; // Agregar id al botón personalizado
 
     thumbnailGroup.appendChild(thumbnailLabel);
     thumbnailGroup.appendChild(thumbnailInput);
@@ -102,6 +102,15 @@ async function AddProductView() {
     // Agregar evento de clic al botón personalizado para abrir el selector de archivos
     customFileUpload.addEventListener('click', () => {
         thumbnailInput.click();
+    });
+
+    // Agregar evento de cambio al input de archivo para actualizar el texto del botón personalizado
+    thumbnailInput.addEventListener('change', () => {
+        if (thumbnailInput.files.length > 0) {
+            customFileUpload.textContent = thumbnailInput.files[0].name;
+        } else {
+            customFileUpload.textContent = 'Seleccionar archivo';
+        }
     });
 
     return formContainer;

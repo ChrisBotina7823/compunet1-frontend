@@ -1,0 +1,82 @@
+.payment-history-container {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-history-container h2 {
+    text-align: center;
+    color: #5d5959;
+    font-size: 26px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ececec;
+    padding-bottom: 10px;
+}
+
+.payment-list {
+    padding: 0;
+    margin: 0;
+}
+
+.factura {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.factura:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.factura-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #679abf;
+}
+
+.cart-product {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.cart-product div {
+    flex: 1;
+}
+
+.cart-product:hover {
+    background-color: #e0e0e0;
+    padding-left: 20px;
+}
+
+.factura-total {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: right;
+    color: #696c6e;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.factura-header, .cart-product, .factura-total {
+    padding-left: 15px;
+}
+
+.cart-product div {
+    color: #000; /* Cambiar el color del texto a negro */
+}

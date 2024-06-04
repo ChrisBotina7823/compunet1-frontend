@@ -1,0 +1,245 @@
+/* styles.css */
+.cart-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Mantén esta línea para centrar verticalmente */
+    padding: 15px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title{
+    text-align: center;
+    font-size: 30px;
+    color: #000;
+}
+.cart-product img {
+    max-width: 80px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.cart-product .product-info {
+    flex: 1;
+}
+
+.cart-product .product-info h3 {
+    margin-bottom: 5px;
+}
+
+.cart-product .product-info p {
+    margin-bottom: 0;
+}
+
+.cart-product > .remove-button {
+    background-color: #e74c3c;
+}
+
+.cart-product button {
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 2px;
+    font-size: 1.5rem;
+    width:3rem;
+    transition: background-color 0.3s ease;
+}
+
+.cart-product > .remove-button:hover {
+    background-color: #c0392b;
+
+}
+
+.cart-product > .add-button {
+    background-color: #60921A;
+}
+
+.cart-product > .add-button:hover {
+    background-color: #476E0F;
+
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+
+
+.buy-button,
+.accept-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #706969;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover,
+.accept-button:hover { /* Corregido el selector */
+    background-color: #5c5b5b;
+}
+
+
+.product-container2 {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info2 h3,
+.product-info2 p {
+   
+    color: #706969;
+}
+
+
+
+
+/*Recibo*/
+
+
+
+.divRecibo {
+  
+    margin: 20px auto; /* Esto centra el recibo horizontalmente */
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+.divRecibo ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.divRecibo li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+ 
+}
+
+.divRecibo li:last-child {
+    border-bottom: none; /* Elimina el borde inferior del último elemento */
+}
+
+.divRecibo span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.accept-button {
+    display: block;
+    margin: 0 auto; /* Esto centra el botón dentro del recibo */
+    background-color: #706969;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.accept-button:hover {
+    background-color: #5c5b5b;
+}
+
+
+.invoice-title{
+
+    color: #000;
+}
+
+
+.divRecibo span,
+.invoice-title {
+    color: #706969;
+}
+
+
+
+.divRecibo span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    max-width: 200px; /* Puedes ajustar este valor según sea necesario */
+    white-space: nowrap; /* Esto asegura que el texto no se envuelva */
+    overflow: hidden; /* Esto oculta cualquier contenido que supere el ancho máximo */
+    text-overflow: ellipsis; /* Esto agrega puntos suspensivos (...) al final del texto que se recorta */
+}
+
+
+
+
+
+
+.message-container {
+    width: 50%;
+    border: 2px solid transparent; 
+    background-color: #f1efef;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto; 
+    display: block;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.message-container:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px); 
+}
+
+
+
+
+
+.empty-cart-message {
+    
+    font-size: 25px;
+
+    background-image: linear-gradient(to right, #8fb2df, #ff0000); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+
+  
+    margin-top: 45px;
+    text-align: center;
+}
+
+.empty-cart-description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
