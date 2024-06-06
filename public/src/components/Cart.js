@@ -47,15 +47,28 @@ export default function Cart(cart) {
         removeButton.textContent = "-";
         removeButton.classList.add("remove-button"); // Agregar clase específica al botón de eliminar
         removeButton.onclick = () => {
-            removeProductFromCart(user.username, product.id);
-            location.reload();
-        }
+            removeProductFromCart(user.username, product.id)
+                .then(updatedCart => {
+                    const newProduct = updatedCart.products.find(p => p.id === product.id);
+                    if (newProduct) {
+                        productQuantity.innerText = "Cantidad: " + newProduct.quantity;
+                    } else {
+                        productContainer.remove();
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        };
         const addButton = document.createElement('button');
         addButton.classList.add("add-button"); // Agregar clase específica al botón de agregar
         addButton.textContent = "+";
         addButton.onclick = () => {
-            addProductToCart(user.username, product.id);
-            location.reload();
+            addProductToCart(user.username, product.id)
+                .then(updatedCart => {
+                    console.log(updatedCart);
+                    const newProduct = updatedCart.products.find(p => p.id === product.id);
+                    productQuantity.innerText = "Cantidad: " + newProduct.quantity;
+                })
+                .catch(error => console.error('Error:', error));
         };
         productElement.appendChild(removeButton);
         productElement.appendChild(addButton);

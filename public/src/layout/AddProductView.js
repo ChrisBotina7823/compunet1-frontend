@@ -7,7 +7,7 @@ async function AddProductView() {
     
     const form = document.createElement('form');
     form.method = 'POST';
-    form.action = 'https://compunet1-backend-production.up.railway.app/products';
+    form.action = 'http://localhost:3000/products';
     form.enctype = 'multipart/form-data';
     
     // Crear el título del formulario
@@ -100,6 +100,7 @@ async function AddProductView() {
         event.preventDefault();
         addProduct(new FormData(form));
         location.href = '#products';
+        location.reload();
         alert('Producto añadido con éxito')
     });
 
