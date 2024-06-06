@@ -119,6 +119,7 @@ main {
     /**/
     width: 77%;
     max-width: 350px;
+    max-height: 350px;
     padding: 20px;
 
 }
