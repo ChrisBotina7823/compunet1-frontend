@@ -1,3 +1,5 @@
+import { addProduct } from "../services/ProductServices.js";
+
 async function AddProductView() {
     // Crear el contenedor del formulario
     let formContainer = document.createElement('div');
@@ -97,6 +99,8 @@ async function AddProductView() {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
         addProduct(new FormData(form));
+        location.href = '#products';
+        alert('Producto añadido con éxito')
     });
 
     // Agregar evento de clic al botón personalizado para abrir el selector de archivos
