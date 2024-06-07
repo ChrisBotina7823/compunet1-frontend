@@ -5,7 +5,7 @@ async function getCart(username) {
     try {
         const user = JSON.parse(localStorage.getItem("user"));
         const username = user.username
-        const response = await fetch(`http://localhost:3000/cart/${username}`);
+        const response = await fetch(`https://compunet1-backend-production.up.railway.app/cart/${username}`);
         const responseJson = await response.json();
        
         return responseJson.cart;
@@ -18,7 +18,7 @@ async function getCart(username) {
 function addProductToCart(username, productId) {
     async function addProductToCartAsync(username, productId) {
         try {
-            const response = await fetch(`http://localhost:3000/cart/${username}/products/${productId}`, {
+            const response = await fetch(`https://compunet1-backend-production.up.railway.app/cart/${username}/products/${productId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,13 +40,13 @@ function addPaymentHistory(username){
         
         try {
             const user = JSON.parse(localStorage.getItem("user"));
-            let response = await fetch(`http://localhost:3000/cart/${user.username}`);
+            let response = await fetch(`https://compunet1-backend-production.up.railway.app/cart/${user.username}`);
             let responseJson = await response.json();
             
             for(let i = 0; i < responseJson.cart.products.length; i++){
                 let element = responseJson.cart.products[i]
 
-                response = await fetch(`http://localhost:3000/cart/getStock/${username}`, {
+                response = await fetch(`https://compunet1-backend-production.up.railway.app/cart/getStock/${username}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function addPaymentHistory(username){
                     }
             };
             
-                response = await fetch(`http://localhost:3000/cart/pay/${username}`, {
+                response = await fetch(`https://compunet1-backend-production.up.railway.app/cart/pay/${username}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ function getPaymentHistory(username){
         
         try {
           
-             let response = await fetch(`http://localhost:3000/cart/paymentHistory/${username}`, {
+             let response = await fetch(`https://compunet1-backend-production.up.railway.app/cart/paymentHistory/${username}`, {
                 method: 'POST',              
             });
             
@@ -115,7 +115,7 @@ function getPaymentHistory(username){
 function removeProductFromCart(username, productId) {
     async function removeProductFromCartAsync(username, productId) {
         try {
-            const response = await fetch(`http://localhost:3000/cart/${username}/products/${productId}`, {
+            const response = await fetch(`https://compunet1-backend-production.up.railway.app/cart/${username}/products/${productId}`, {
                 method: 'DELETE',
             });
             const responseJson = await response.json();
