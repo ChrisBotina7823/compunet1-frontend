@@ -16,7 +16,7 @@ export default async function PaymentHistoryComponent() {
 
     const user = JSON.parse(localStorage.getItem('user'));
     // Obtener el historial de pagos
-    var paymentHistory = await getPaymentHistory("u0");
+    var paymentHistory = await getPaymentHistory(user.username);
     console.log(paymentHistory);
 
     let purchaseIndex = 1;
